@@ -1,0 +1,165 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.tabs{
+    margin: 0 auto;
+    width: 80%; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+a{
+    text-decoration: none;
+    /* border: 1px solid tomato; */
+    width: 505px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(174, 205, 218);
+    color: white;
+}
+
+a:hover{
+    background-color: rgb(85, 173, 211);
+    color: rgb(255, 255, 255);
+}
+
+.container{
+    margin: 0 auto;
+    width: 80%;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; */
+}
+
+/* .srochno{
+    border-right: 1px solid red;
+}
+
+.nesrochno{
+    border-left: 1px solid red; */
+/* } */
+
+ul{ 
+    /* border: 1px solid green; */
+    list-style: none;
+    margin-top: 30px;
+}
+
+li{
+    /* border: 1px solid red; */
+    margin-top: 30px;
+    color: white;
+    font-size: 40px;
+    background-color: rgb(174, 205, 218);
+}
+
+.list{
+    display: flex;
+    justify-content: space-between;
+}
+button{
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.complite__btn{
+    background-color: rgb(17, 209, 10);
+}
+.delite__btn{
+    background-color: rgb(224, 14, 14);
+
+}
+.btn{
+    background-color: rgb(9, 176, 241);
+
+}
+
+.complite__btn:active{
+    opacity: 0.5;
+}
+.delite__btn:active{
+    opacity: 0.5;
+}
+.btn:active{
+    opacity: 0.5;
+}
+.title{
+    outline: none;
+    border: 1px solid rgb(9, 176, 241);
+    width: 50%;
+    font-size: 30px;
+}
+.title:focus{
+    border: 5px solid rgb(9, 176, 241);
+}
+
+
+
+.form__create{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: start;
+}
+form{
+    background-color: rgb(174, 205, 218);
+    display: flex;
+    justify-content: space-between;
+}
+
+.opacity{
+    opacity: 0.5;
+}
+
+.complite{
+    background-color: rgb(124, 236, 114);
+}
+
+.bgcolor{   
+    background-color: rgb(9, 176, 241);
+}
+
+.wrapper{
+    /* border: 1px solid tomato; */
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.info{
+    /* border: 1px solid rgb(31, 30, 29); */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.back{
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 40px;
+    padding: 0;
+    background-color: rgb(9, 176, 241);
+   
+}
+
+p{
+    font-size: 30px;
+    text-align: center;
+}
+
+.srochno{
+    background-color: rgb(114, 56, 56);
+}
+
+.hide{
+    display: none;
+}
+
+

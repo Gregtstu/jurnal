@@ -1,0 +1,27 @@
+li{
+    border-bottom: 1px solid black;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+h2{
+    margin-top: 50px;
+}
+
+/* ol{
+    margin-top: 50px;
+} */
+
+.container{
+    margin: 0 auto;
+    width: 80%;
+}
+
+.srochno{
+    background-color: rgb(114, 56, 56);
+}
+
+a{
+    text-decoration: none;
+    font-size: 50px;
+}

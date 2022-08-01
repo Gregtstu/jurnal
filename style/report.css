@@ -1,0 +1,35 @@
+a{
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 20px;
+}
+.main{
+    margin-top: 0;
+    border: 1px solid black;
+    width: 98%;
+    margin: 0 auto;
+}
+
+.complited{
+    margin-top: 30px;
+    width: 49%;
+
+}
+
+.noComplited{
+    margin-top: 30px;
+    width: 49%;
+}
+
+.tables{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+    width: 98%;
+    margin: 0 auto;
+}
+
+.srochno{
+    background-color: rgb(114, 56, 56);
+}

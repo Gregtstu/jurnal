@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/main.css">
+    <title>Журнал выдачи дневного задания</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Журнал <br> выдачи дневного задания</h1>
+        <div class="buttons">
+            <a class="tab1" href="./lists/index.html">перейти к журналу</a>
+            <a class="tab1" href="./lists/mainReport.html"> не выполненные задания отдела</a>
+        </div>
+    </div>
+    <section>
+        <div class="select">
+            
+            <select class="selects">
+                <option value="выбрать работника">выбрать работника</option>
+                <option value="работник1">Зазуля Елена Пантелеевна</option>
+                <option value="работник2">Рыжов Игорь Валенитинович</option>
+                <option value="работник3">Максивом Виталий Викторович</option>
+            </select>
+        </div>
+        <div class="zadaniya">
+            <div class="container">
+                <p>Степень занятости: <span class="result"></span></p>
+                <p >Выполненных: <span class="complited"></span></p>
+                <p >Не выполненных: <span class="noComplited"></span></p>
+                <p >Всего: <span class="all"></span></p>
+                <p> <u>Cейчас работает над</u>: <span class="workNow"></span></p>
+            </div>
+            <div class="img">
+                <img class="igor none" src="./img/igor.jpg" width="300px">
+                <img class="vitalya none" src="./img/vitalya.jpg" width="500px">
+                <img class="elena none" src="./img/elena.jpg" width="500px">
+            </div>
+        </div>
+        
+    </section>
+    
+    <script src="./js/main.js"></script>
+</body>
+</html>
