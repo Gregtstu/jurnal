@@ -1,0 +1,57 @@
+.header{
+    background-color: var(--heder-fon-color);
+}
+body{
+    background-color: var(--main-fon-color);
+}
+h1,a, .hero__select {
+    color: var(--text-color);
+    text-align: center;
+}
+
+.header__btn{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.header__btn-link{
+    background-color: var(--header-btn-bgcolor);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.main{
+    padding-top: 30px;
+}
+
+.hero__select{
+    width: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--header-btn-bgcolor);
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.tasks{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.text__hide > p {
+    font-size: 30px;
+}
+
+.text__description{
+    margin-top: 30px;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+}

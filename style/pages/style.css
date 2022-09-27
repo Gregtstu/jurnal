@@ -5,7 +5,7 @@
 
 .tabs{
     margin: 0 auto;
-    width: 80%; 
+    width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -27,7 +27,9 @@ a:hover{
     background-color: rgb(85, 173, 211);
     color: rgb(255, 255, 255);
 }
-
+input{
+    font-size: 20px;
+}
 .container{
     margin: 0 auto;
     width: 80%;
@@ -44,7 +46,7 @@ a:hover{
     border-left: 1px solid red; */
 /* } */
 
-ul{ 
+ul{
     /* border: 1px solid green; */
     list-style: none;
     margin-top: 30px;
@@ -93,7 +95,6 @@ button{
     outline: none;
     border: 1px solid rgb(9, 176, 241);
     width: 50%;
-    font-size: 30px;
 }
 .title:focus{
     border: 5px solid rgb(9, 176, 241);
@@ -120,7 +121,7 @@ form{
     background-color: rgb(124, 236, 114);
 }
 
-.bgcolor{   
+.bgcolor{
     background-color: rgb(9, 176, 241);
 }
 
@@ -146,7 +147,7 @@ form{
     font-size: 40px;
     padding: 0;
     background-color: rgb(9, 176, 241);
-   
+
 }
 
 p{

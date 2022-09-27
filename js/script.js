@@ -10,150 +10,147 @@ const complite = 0;
 let counterId = 0;
 
 
-title.addEventListener('input', ()=> {
+title.addEventListener('input', () => {
     btn.textContent = 'создать дело'
-    if(title.value != ''){
+    if (title.value != '') {
         btn.disabled = false;
         btn.classList.remove('opacity')
     }
 });
 
-    if(btn.disabled){
-        btn.classList.add('opacity')
+if (btn.disabled) {
+    btn.classList.add('opacity')
 }
 
 let toDoList = [];
 
 
-btn.addEventListener('click', ()=> {
+btn.addEventListener('click', () => {
     let obj = {
-        id : ( (Math.random() * 428).toFixed(3) ),
-        title : `${title.value}`,
-        complite : false,
-        checking : false,
+        id: ((Math.random() * 428).toFixed(3)),
+        title: `${title.value}`,
+        complite: false,
+        checking: false,
     };
     toDoList.push(obj);
     localStorage.setItem('todo', JSON.stringify(toDoList));
 });
 
-function compliteTask(arr){
+function compliteTask(arr) {
     let compliteBtn = null;
     document.querySelectorAll('.complite__btn').forEach(elem => {
-        elem.addEventListener('click' , ()=> {
+        elem.addEventListener('click', () => {
             compliteBtn = elem.id
             arr.map(obj => {
-                if(obj.id == compliteBtn && obj.complite == false){
+                if (obj.id == compliteBtn && obj.complite == false) {
                     obj.complite = true;
                     localStorage.setItem('todo', JSON.stringify(toDoList));
-                }else{
+                } else {
                     obj.complite == false
                 }
             });
-            // window.location.reload();
+            window.location.reload();
         });
     });
-    
+
 }
 
-function showList (obj){
+function showList(obj) {
     let list = document.createElement('li');
-    if(!obj.complite){
+    if (!obj.complite) {
         list.innerHTML = `
-        <div class="list">
+        <div class="list" id="${obj.id}">
         <input class="radio" type="radio" name="radio" id="${obj.id}">
-        <p class="text">${obj.title}</p>
+        <p class="text" id="${obj.id}">${obj.title}</p>
         <div class="buttons">
         <button class="complite__btn" id="${obj.id}">выполнено</button>
         </div>
         </div>
         `;
-       
-        if(obj.checking){
+
+        if (obj.checking) {
             list.innerHTML = `
-            <div class="list srochno">
+            <div class="list srochno" id="${obj.id}">
             <input  class="radio" class="radio" type="radio" name="radio" id="${obj.id}">
-            <p class="text">${obj.title}</p>
+            <p class="text" id="${obj.id}">${obj.title}</p>
             <div class="buttons">
             <button class="complite__btn" id="${obj.id}">выполнено</button>
             </div>
             </div>
-            `;  
+            `;
         }
 
-    }  
-    
-    else{
+    } else {
         list.innerHTML = `
-        <div class="list complite">
-        <p>${obj.title}</p>
+        <div class="list complite" id="${obj.id}">
+        <p class="text" id="${obj.id}">${obj.title}</p>
         <div class="buttons">
         <button class="delite__btn" id="${obj.id}">удалить</button>
         </div>
         </div>
         `;
     }
-   
-    
+
+
     doings.append(list);
-    
+
 }
 
 add();
 
-function add(){
-    if(JSON.parse( localStorage.getItem('todo')) === null){
+function add() {
+    if (JSON.parse(localStorage.getItem('todo')) === null) {
         alert('Чтобы начать пользоваться журналом, необходимо добавить задания каждому работнику')
-    }else{
-        toDoList = JSON.parse( localStorage.getItem('todo')) ;
+    } else {
+        toDoList = JSON.parse(localStorage.getItem('todo'));
         toDoList.forEach(item => {
-            showList (item);
-        });  
-        
+            showList(item);
+        });
+
     }
 }
 
 compliteTask(toDoList);
 
 
-function deliteTask(){
+function deliteTask() {
     let deliteBtn = null;
     document.querySelectorAll('.delite__btn').forEach(elem => {
-        elem.addEventListener('click' , ()=> {
+        elem.addEventListener('click', () => {
             deliteBtn = +elem.id
-                if(confirm('точно надо удалить??')){
-                    toDoList = JSON.parse( localStorage.getItem('todo'));
-                    const newList = toDoList.filter(obj => obj.id != deliteBtn);
-                    localStorage.setItem('todo', JSON.stringify(newList));
-                    // window.location.reload();
-                }
+            if (confirm('точно надо удалить??')) {
+                toDoList = JSON.parse(localStorage.getItem('todo'));
+                const newList = toDoList.filter(obj => obj.id != deliteBtn);
+                localStorage.setItem('todo', JSON.stringify(newList));
+                window.location.reload();
+            }
             console.log(toDoList);
         });
     });
-    
+
 }
 
 deliteTask()
 
-function showCoutTask(){
-    let cout_sroch_task = JSON.parse( localStorage.getItem('todo')).length
-    let cout_nesroch_task = JSON.parse( localStorage.getItem('todo2')).length
-    let cout_raznoe_task = JSON.parse( localStorage.getItem('todo3')).length
-    document.querySelector('.tab1').textContent =`Зазуля Е.П. (${cout_sroch_task})`
+function showCoutTask() {
+    let cout_sroch_task = JSON.parse(localStorage.getItem('todo')).length
+    let cout_nesroch_task = JSON.parse(localStorage.getItem('todo2')).length
+    let cout_raznoe_task = JSON.parse(localStorage.getItem('todo3')).length
+    document.querySelector('.tab1').textContent = `Зазуля Е.П. (${cout_sroch_task})`
     document.querySelector('.tab2').textContent = `Рыжов И.В. (${cout_nesroch_task})`
     document.querySelector('.tab3').textContent = `Максимов В.В.  (${cout_raznoe_task})`
 
     let complited = 0;
     let compliting = 0;
-    JSON.parse( localStorage.getItem('todo')).forEach(item => {
-    //   console.log(item);
-      if(!item.complite){
-        compliting++;
-        document.querySelector('.noComplitedDoings').innerHTML = `${compliting} `
-    }else{
-        complited++;
-        document.querySelector('.complitedDoings').innerHTML = `${complited}`;
-      }
-      
+    JSON.parse(localStorage.getItem('todo')).forEach(item => {
+        if (!item.complite) {
+            compliting++;
+            document.querySelector('.noComplitedDoings').innerHTML = `${compliting} `
+        } else {
+            complited++;
+            document.querySelector('.complitedDoings').innerHTML = `${complited}`;
+        }
+
     })
 
 }
@@ -166,65 +163,72 @@ document.querySelector('.allDoings').innerHTML = `${toDoList.length} `
 // document.querySelector('.noComplitedDoings').innerHTML = `${toDoList.length} `
 
 
-
-
-function cheked (){
+function cheked() {
     let check = document.querySelectorAll('.radio');
     check.forEach(item => {
-        item.addEventListener('change', ()=> {
-            
-            toDoList.map(elem =>{
-                
-                if(elem.id == item.id && item.checked){
+        item.addEventListener('change', () => {
+
+            toDoList.map(elem => {
+
+                if (elem.id == item.id && item.checked) {
                     elem.checking = true;
-                        
-                }else{
+
+                } else {
                     elem.checking = false;
                 }
-                localStorage.setItem('todo', JSON.stringify(toDoList)); 
-                // window.location.reload();
-            }); 
+                localStorage.setItem('todo', JSON.stringify(toDoList));
+                window.location.reload();
+            });
         })
     });
 
-   
 
 }
-cheked ();
 
+cheked();
 
 
 showCoutTask();
 
 
-let serchImput = document.querySelector('.form-control').addEventListener('input', (e)=> {
+let searchInput = document.querySelector('.form-control');
+
+searchInput.addEventListener('input', (e) => {
     const myInputText = e.target.value;
-     if(myInputText){
-        document.querySelectorAll('.text').forEach(item => {
-          if(item.textContent.search(myInputText) == -1){
-            document.querySelectorAll('.text').forEach(item => {
-                item.classList.add('hide')
-            })
-          }  else{
-            document.querySelectorAll('.text').forEach(item => {
-                item.classList.remove('hide')
-            })
-          }
-            
-        })
+    let lishki = document.querySelectorAll('.list');
+    let text = document.querySelectorAll('.text');
+    if (myInputText) {
+        text.forEach(item => {
 
-     }
-     
-    //  else{
-    //     document.querySelectorAll('.text').forEach(item => {
-    //         document.querySelectorAll('li').forEach(item => {
-    //             item.classList.add('hide')
-    //         })
+            if (item.textContent.search(myInputText) == -1) {
+                lishki.forEach(elem => {
+                    if (elem.id == item.id) {
+                        elem.classList.add('hide');
+                    }
+                });
+            }
+            // else {
+            //     text.forEach( item => {
+            //         item.innerHTML = stringMarker(item.textContent, item.textContent.search(myInputText), myInputText.length);
+            //     })
+            // }
 
-    //     })
-    //   }
+        });
+    } else if (!myInputText) {
+        text.forEach(item => {
+            lishki.forEach(elem => {
+                elem.classList.remove('hide');
+            });
+            window.location.reload();
+        });
+    }
 
-})
+});
+
+// function stringMarker(str, position, len){
+//     return str.slice(0, position) + '<mark>' + str.slice(position, position + len) + '</mark>' + str.slice(position + len);
+// }
+
 
 
 

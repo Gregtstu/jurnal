@@ -58,46 +58,45 @@ function compliteTask(arr){
     
 }
 
-function showList (obj){
+function showList(obj) {
     let list = document.createElement('li');
-    if(!obj.complite){
+    if (!obj.complite) {
         list.innerHTML = `
-        <div class="list">
+        <div class="list" id="${obj.id}">
         <input class="radio" type="radio" name="radio" id="${obj.id}">
-        <p>${obj.title}</p>
+        <p class="text" id="${obj.id}">${obj.title}</p>
         <div class="buttons">
         <button class="complite__btn" id="${obj.id}">выполнено</button>
         </div>
         </div>
         `;
 
-        if(obj.checking){
+        if (obj.checking) {
             list.innerHTML = `
-            <div class="list srochno">
+            <div class="list srochno" id="${obj.id}">
             <input  class="radio" class="radio" type="radio" name="radio" id="${obj.id}">
-            <p>${obj.title}</p>
+            <p class="text" id="${obj.id}">${obj.title}</p>
             <div class="buttons">
             <button class="complite__btn" id="${obj.id}">выполнено</button>
             </div>
             </div>
-            `;  
+            `;
         }
 
-    }  
-    
-    else{
+    } else {
         list.innerHTML = `
-        <div class="list complite">
-        <p>${obj.title}</p>
+        <div class="list complite" id="${obj.id}">
+        <p class="text" id="${obj.id}">${obj.title}</p>
         <div class="buttons">
         <button class="delite__btn" id="${obj.id}">удалить</button>
         </div>
         </div>
         `;
     }
-     
+
+
     doings.append(list);
-    
+
 }
 
 
@@ -206,6 +205,43 @@ cheked ();
 
 showCoutTask();
 
+
+let searchInput = document.querySelector('.form-control');
+searchInput.addEventListener('input', (e)=> {
+    const myInputText = e.target.value;
+    let lishki = document.querySelectorAll('.list');
+    let text = document.querySelectorAll('.text');
+    if (myInputText) {
+        text.forEach(item => {
+
+            if (item.textContent.search(myInputText) == -1) {
+                lishki.forEach(elem => {
+                    if (elem.id == item.id) {
+                        elem.classList.add('hide');
+                    }
+                });
+            }
+            // else {
+            //     text.forEach( item => {
+            //         item.innerHTML = stringMarker(item.textContent, item.textContent.search(myInputText), myInputText.length);
+            //     })
+            // }
+
+        });
+    } else if (!myInputText) {
+        text.forEach(item => {
+            lishki.forEach(elem => {
+                elem.classList.remove('hide');
+            });
+            window.location.reload();
+        });
+    }
+
+});
+
+// function stringMarker(str, position, len){
+//     return str.slice(0, position) + '<mark>' + str.slice(position, position + len) + '</mark>' + str.slice(position + len);
+// }
 
 
 

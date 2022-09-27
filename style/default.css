@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('http://fonts.cdnfonts.com/css/maximum-impact');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+*, *:after, *:before{
+    box-sizing: inherit;
+}
+
+:root{
+    --heder-fon-color: #faf7f7;
+    --text-color: #55555e;
+    --header-btn-bgcolor: #f3dada;
+    --main-fon-color:#FFFFFF;
+
+
+
+
+
+    /*--inform-text-color:#FFFFFF;*/
+    /*--title-h2-color:#F2A500;*/
+    /*--bg-color:#EC7F00;*/
+    /*--progess-fone:#C4C4C4;*/
+    /*--description-text-color: #2D2D2D;*/
+    /*--cards-bacground: #E9E9E9;*/
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Montserrat, sans-serif;
+}
+
+
+img{
+    max-width: 100%;
+    height: auto;
+    padding: 0;
+}
+
+h1{
+    margin: 0;
+    font-family: impact, serif;
+    font-weight: 400;
+    font-size: 40px;
+    box-sizing: border-box;
+}
+
+
+h2{
+    font-family: impact, serif;
+    font-weight: 400;
+    font-size: 68px;
+    /*color: var(--title-h2-color);*/
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 30px 0 30px;
+}
+
+.hide{
+    display: none;
+}
+
+a{
+    /*color: var(--inform-text-color);*/
+    text-decoration: none;
+}
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+
+button{
+    display: block;
+    padding: 18px 45px;
+    height: 60px;
+    cursor: pointer;
+    /*background-color: var(--bg-color);*/
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    /*color: var(--inform-text-color);*/
+    z-index: 1000;
+}
